@@ -1,6 +1,7 @@
 'use strict';
 
 const axios = require('axios');
+const hadithModel = require('../models/scheModel');
 
 
 async function getAllHadithApiHandler(req,res){
@@ -9,10 +10,20 @@ async function getAllHadithApiHandler(req,res){
 }
 
 
+async function getAllHadithToDatabaseHandler(req,res){
+    let allHadith =await hadithModel.find({});
+    res.send(allHadith)    
+
+}
+
+
+
 
 
 
 module.exports = {
- getAllHadithApiHandler
+ getAllHadithApiHandler,
+getAllHadithToDatabaseHandler
+
     
 }
