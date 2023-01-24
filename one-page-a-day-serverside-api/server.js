@@ -23,7 +23,7 @@ const hadithRoutes = require('./routes/hadith');
 
 // Middlewares & route
 app.use(cors());
-// app.use(express.json());
+app.use(express.json());
 app.use(hadithRoutes);
 // app.use(errorHandler);
 // app.use('*',notFoundHandler);
@@ -37,7 +37,6 @@ app.get('/', (req,res) => {
 })
 
 
-// app.use(express.json());
 
 
 app.listen(PORT,()=>console.log(`Listening on port ${PORT}`));
